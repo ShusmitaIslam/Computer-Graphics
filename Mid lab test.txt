@@ -1,0 +1,186 @@
+#include <windows.h>
+#include <GL/glut.h>
+
+void display() {
+
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
+
+    glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer (background)
+
+    glLineWidth(1.0);
+
+    glBegin(GL_LINES);              ///tree
+	glColor3f(1.0f, 1.0f, 1.0f); // white
+	glVertex2f(-0.9f, -0.0f);    /// tree base
+	glVertex2f(-0.2f, 0.0f);    /// done
+
+	glVertex2f(-0.9f, -0.0f);    /// tree left 1
+	glVertex2f(-0.7f, 0.2f);    /// done
+
+	glVertex2f(-0.2f, -0.0f);    /// tree left 1
+	glVertex2f(-0.4f, 0.2f);    ///done
+
+	glVertex2f(-0.7f, 0.2f);    /// tree left base 2
+	glVertex2f(-0.8f, 0.2f);    ///done
+
+	glVertex2f(-0.4f, 0.2f);    /// tree left base 2
+	glVertex2f(-0.3f, 0.2f);    ///done
+
+	glVertex2f(-0.8f, 0.2f);    /// tree left 2
+	glVertex2f(-0.7f, 0.45f);    /// done
+
+	glVertex2f(-0.4f, 0.45f);    /// tree right 2
+	glVertex2f(-0.3f, 0.2f);    /// done
+
+	glVertex2f(-0.7f, 0.45f);    /// tree left base 3
+	glVertex2f(-0.75f, 0.45f);    ///done
+
+	glVertex2f(-0.35f, 0.45f);    /// tree right base 3
+	glVertex2f(-0.4f, 0.45f);    ///done
+
+	glVertex2f(-0.57f, 0.7f);    /// tree left 3
+	glVertex2f(-0.75f, 0.45f);    /// done
+
+	glVertex2f(-0.57f, 0.7f);    /// tree right 3
+	glVertex2f(-0.35f, 0.45f);    /// done
+
+	glVertex2f(-0.5f, -0.3f);    /// tree left stick
+	glVertex2f(-0.5f, 0.0f);    /// done
+
+	glVertex2f(-0.6f, -0.3f);    /// tree right stick
+	glVertex2f(-0.6f, 0.0f);    /// done
+
+	glVertex2f(-0.5f, -0.3f);    /// tree right stick
+	glVertex2f(-0.6f, -0.3f);    /// done
+
+
+	///house
+
+    glVertex2f(0.1f, -0.1f);    /// house base
+	glVertex2f(0.4f, -0.1f);    /// done
+
+	glVertex2f(0.1f, -0.1f);    /// house left stick
+	glVertex2f(0.1f, 0.4f);    /// done
+
+	glVertex2f(0.4f, -0.1f);    /// house left stick
+	glVertex2f(0.4f, 0.4f);    /// done
+
+	glVertex2f(0.1f, 0.4f);    /// house head
+	glVertex2f(0.4f, 0.4f);    /// done
+
+	///door
+	glVertex2f(0.2f, -0.1f);    /// door left stick
+	glVertex2f(0.2f, 0.25f);    /// done
+
+	glVertex2f(0.3f, -0.1f);    /// door right stick
+	glVertex2f(0.3f, 0.25f);    /// done
+
+	glVertex2f(0.2f, 0.25f);    /// door head
+	glVertex2f(0.3f, 0.25f);    /// done
+
+	///house head left
+	glVertex2f(0.1f, 0.4f);    /// house head
+	glVertex2f(0.15f, 0.6f);    /// done
+
+	///house right left
+	glVertex2f(0.4f, 0.4f);    /// house head
+	glVertex2f(0.35f, 0.6f);    /// done
+
+	glVertex2f(0.15f, 0.6f);    /// house head base
+	glVertex2f(0.35f, 0.6f);    /// done
+
+	///right side house
+	glVertex2f(0.35f, 0.6f);    /// house head base1
+	glVertex2f(0.6f, 0.7f);    /// done
+
+	glVertex2f(0.4f, 0.4f);    /// house head base2
+	glVertex2f(0.7f, 0.5f);    /// done
+
+	///right most house part
+	glVertex2f(0.6f, 0.7f);    /// house head base1
+	glVertex2f(0.7f, 0.5f);    /// done
+
+	glVertex2f(0.68f, 0.5f);    /// house left stick
+	glVertex2f(0.68f, 0.1f);    /// done
+
+	glVertex2f(0.4f, -0.1f);    /// house base stick
+	glVertex2f(0.68f, 0.1f);    /// done
+
+	///upper house
+	glVertex2f(0.15f, 0.6f);    /// house left stick
+	glVertex2f(0.15f, 0.78f);    /// done
+
+	glVertex2f(0.35f, 0.6f);    /// house right stick
+	glVertex2f(0.35f, 0.78f);    /// done
+
+	glVertex2f(0.12f, 0.78f);    /// upper house  head1
+	glVertex2f(0.36f, 0.78f);    /// done
+
+	glVertex2f(0.2f, 0.7f);    /// window  head
+	glVertex2f(0.3f, 0.7f);    /// done
+
+	glVertex2f(0.2f, 0.6f);    /// window  left
+	glVertex2f(0.2f, 0.7f);    /// done
+
+	glVertex2f(0.3f, 0.6f);    /// window  right
+	glVertex2f(0.3f, 0.7f);    /// done
+
+	glVertex2f(0.12f, 0.82f);    /// upper house  head2
+	glVertex2f(0.36f, 0.82f);    /// done
+
+	glVertex2f(0.12f, 0.78f);    /// upper house  head left stick
+	glVertex2f(0.12f, 0.82f);    /// done
+
+	glVertex2f(0.36f, 0.78f);    /// upper house  head right stick
+	glVertex2f(0.36f, 0.82f);    /// done
+
+	glVertex2f(0.36f, 0.82f);    ///upper house right head
+	glVertex2f(0.6f, 0.88f);    /// done
+
+	glVertex2f(0.36f, 0.78f);    ///upper house right head2
+	glVertex2f(0.6f, 0.85f);    /// done
+
+	glVertex2f(0.6f, 0.85f);    ///upper house right head stick
+	glVertex2f(0.6f, 0.88f);    /// done
+
+    glVertex2f(0.6f, 0.85f);    ///upper house right stick
+	glVertex2f(0.6f, 0.7f);    /// done
+
+	glVertex2f(0.35f, 0.92f);    ///upper house head boundry1
+	glVertex2f(0.6f, 0.88f);    /// done
+
+	glVertex2f(0.35f, 0.89f);    ///upper house head boundry2
+	glVertex2f(0.57f, 0.87f);    /// done
+
+	glVertex2f(0.35f, 0.89f);    ///upper house head boundry2
+	glVertex2f(0.35f, 0.92f);    /// done
+
+	glVertex2f(0.35f, 0.89f);    ///upper house head boundry2
+	glVertex2f(0.16f, 0.82f);    /// done
+
+	glVertex2f(0.35f, 0.92f);    ///upper house head boundry2
+	glVertex2f(0.12f, 0.82f);    /// done
+    glEnd();
+
+    glFlush();  // Render now
+}
+
+
+
+/* Main function: GLUT runs as a console application starting at main()  */
+
+int main(int argc, char** argv) {
+
+    glutInit(&argc, argv);                 // Initialize GLUT
+
+    glutCreateWindow("Rainbow Flag"); // Create a window with the given title
+
+    glutInitWindowSize(320, 320);      // Set the window's initial width & height
+
+    glutDisplayFunc(display); // Register display callback handler for window re-paint
+
+    glutMainLoop();           // Enter the event-processing loop
+
+    return 0;
+
+}
