@@ -1,0 +1,479 @@
+#include <windows.h>  // for MS Windows
+#include <GL/glut.h>  // GLUT, include glu.h and gl.h
+#include<math.h>
+#define PI 3.1416
+
+/* Handler for window-repaint event. Call back when the window first appears and
+whenever the window needs to be re-painted. */
+void display() {
+	glClearColor(0.6f, 0.6f, 0.3f, 0.0f); // Set background color to black and opaque
+    glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer (background)
+	glPointSize(9.0);
+	// Draw a Red 1x1 Square centered at origin
+	///glBegin(GL_POINTS);              // Each set of 4 vertices form a quad
+	///glColor3f(0.7f, 0.9f, 0.6f); // Red
+	///glVertex2f(-0.0f, -0.0f);    // x, y
+    ///glEnd();
+
+
+    ///field start
+    glLineWidth(100.0);
+    glBegin(GL_LINES);///parrot green field
+	glColor3f(0.6f, 0.8f, 0.32f);
+	glVertex2f(-0.36f, -0.59f);    /// road side parrot1
+	glVertex2f(-0.922f, -0.11f);   /// done
+
+	glVertex2f(-0.26f, -0.53f);    /// road side parrot2
+	glVertex2f(-0.922f, 0.035f);   /// done
+
+	glVertex2f(-0.2f, -0.44f);    /// road side parrot3
+	glVertex2f(-0.922f, 0.18f);   /// done
+
+	glVertex2f(-0.09f, -0.39f);    /// road side parrot4
+	glVertex2f(-0.922f, 0.332f);   /// done
+
+	glVertex2f(-0.09f, -0.25f);    /// road side parrot5
+	glVertex2f(-0.7f, 0.28f);   ///done
+
+	glVertex2f(0.01f, -0.2f);    /// road side parrot6
+	glVertex2f(-0.8f, 0.52f);   /// done
+
+	glVertex2f(-0.7f, 0.57f);    /// road side parrot7
+	glVertex2f(0.06f, -0.1f);    /// done
+
+	glVertex2f(-0.5f, 0.54f);    /// road side parrot8
+	glVertex2f(0.1f, 0.02f);    /// done
+
+	glVertex2f(-0.42f, 0.612f);    /// road side parrot9
+	glVertex2f(0.2f, 0.07f);    /// done
+    glEnd();
+
+    glBegin(GL_LINES);///green field
+	glColor3f(0.2f, 0.6f, 0.3f);
+	glVertex2f(-0.922f, -0.04f);   /// road side green1
+	glVertex2f(-0.3f, -0.57f);    /// done
+
+	glVertex2f(-0.922f, 0.11f);    /// road side green2
+	glVertex2f(-0.2f, -0.51f);    /// done
+
+	glVertex2f(-0.922f, 0.257f);    /// road side green3
+	glVertex2f(-0.2f, -0.365f);    /// done
+
+	glVertex2f(-0.922f, 0.4f);    /// road side green4
+	glVertex2f(-0.1f, -0.31f);    /// done
+
+	glVertex2f(-0.68f, 0.34f);    /// road side green5
+	glVertex2f(-0.03f, -0.23f);    /// done
+
+	glVertex2f(-0.59f, 0.4f);    /// road side green6
+	glVertex2f(0.05f, -0.16f);    /// done
+
+	glVertex2f(-0.55f, 0.51f);    /// road side green7
+	glVertex2f(0.08f, -0.04f);    /// done
+
+	glVertex2f(-0.5f, 0.61f);    /// road side green8
+	glVertex2f(0.2f, 0.01f);    /// done
+
+	glVertex2f(-0.42f, 0.68f);    /// road side green9
+	glVertex2f(0.25f, 0.10f);    /// done
+    glEnd();
+
+    glFlush();  // Render now
+
+    glLineWidth(3.0);
+    glBegin(GL_LINES);///white field line
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex2f(-0.4f, -0.55f);    /// left
+	glVertex2f(0.15f, 0.18f);   /// done
+
+	glVertex2f(-0.33f, 0.59f);    /// roof
+	glVertex2f(0.15f, 0.18f);   /// done
+
+	glVertex2f(-0.33f, 0.59f);    /// right
+	glVertex2f(-0.9f, -0.14f);   /// done
+
+	glVertex2f(-0.9f, -0.14f);    /// ground
+	glVertex2f(-0.4f, -0.55f);    /// done
+
+	///roof box1
+	glVertex2f(-0.23f, 0.5f);    /// right1
+	glVertex2f(-0.29f, 0.41f);    /// done
+
+	glVertex2f(0.05f, 0.27f);    /// left1
+	glVertex2f(-0.024f, 0.18f);    /// done
+
+	glVertex2f(-0.29f, 0.41f);    /// ground1
+	glVertex2f(-0.024f, 0.18f);    /// done
+
+	///roof box2
+	glVertex2f(-0.18f, 0.4f);    /// right2
+	glVertex2f(-0.15f, 0.44f);    /// done
+
+	glVertex2f(-0.02f, 0.33f);    /// left2
+	glVertex2f(-0.05f, 0.29f);    /// done
+
+	glVertex2f(-0.18f, 0.4f);    /// ground2
+	glVertex2f(-0.05f, 0.29f);    /// done
+
+	///ground box1
+	glVertex2f(-0.43f, -0.377f);    /// right1
+	glVertex2f(-0.5f, -0.47f);    /// done
+
+	glVertex2f(-0.73f, -0.12f);    /// left1
+	glVertex2f(-0.8f, -0.22f);    /// done
+
+	glVertex2f(-0.73f, -0.12f);    /// ground1
+	glVertex2f(-0.43f, -0.377f);    /// done
+
+	///ground box2
+	glVertex2f(-0.535f, -0.36f);    /// right2
+	glVertex2f(-0.57f, -0.41f);    /// done
+
+	glVertex2f(-0.73f, -0.28f);    /// left2
+	glVertex2f(-0.691f, -0.23f);    /// done
+
+	glVertex2f(-0.535f, -0.36f);    /// ground2
+	glVertex2f(-0.691f, -0.23f);    /// done
+
+	///middle line
+	glVertex2f(-0.122f, -0.19f);    /// field middle line
+	glVertex2f(-0.6f, 0.2372f);   ///done
+    glEnd();
+    ///field end
+
+    glFlush();  // Render now
+
+
+     glLineWidth(47.0);
+    ///left road start
+    glBegin(GL_LINES);/// light ass road
+    glColor3f(0.8f, 0.8f, 0.8f); // Red
+    glVertex2f(-0.99f, -0.3f);    // x, y
+	glVertex2f(-0.4f, -0.8f);    // x, y
+
+	glVertex2f(-0.99f, -0.13f);    // x, y
+	glVertex2f(-0.4f, -0.63f);    // x, y
+    glEnd();
+
+    glBegin(GL_LINES);///deep ass road
+    glColor3f(0.125f, 0.125f, 0.125f); // Red
+    glVertex2f(-0.99f, -0.25f);    // x, y
+	glVertex2f(-0.4f, -0.75f);    // x, y
+
+    glVertex2f(-0.99f, -0.19f);    // x, y
+	glVertex2f(-0.4f, -0.69f);    // x, y
+    glEnd();
+
+    glFlush();  // Render now
+
+    glLineWidth(3.5);
+    glBegin(GL_LINES);///road middle write line
+    glColor3f(0.8f, 0.8f, 0.8f); // Red
+    glVertex2f(-0.99f, -0.23f);    // x, y
+    glVertex2f(-0.4, -0.73f);    // x, y
+    glEnd();
+
+    glFlush();  // Render now
+    ///left road end
+
+    ///right road start
+    glLineWidth(30.0);
+    glBegin(GL_LINES);/// light ass road
+    glColor3f(0.8f, 0.8f, 0.8f); //
+    glVertex2f(-0.4f, -0.63f);    // x, y
+	glVertex2f(0.51f, 0.6f);    // x, y
+
+	glVertex2f(-0.4f, -0.8f);    // x, y
+	glVertex2f(0.51f, 0.43f);    // x, y
+
+	glVertex2f(-0.4f, -0.7f);    // x, y
+	glVertex2f(0.67f, -0.04f);    // x, y
+
+	glVertex2f(-0.4f, -0.8f);    // x, y
+	glVertex2f(0.76f, -0.082f);    // x, y
+    glEnd();
+
+    glBegin(GL_LINES);///deep ass road
+    glColor3f(0.125f, 0.125f, 0.125f); // Red
+    glVertex2f(-0.4f, -0.747f);    // x, y
+	glVertex2f(0.51f, 0.493f);    // x, y
+
+    glVertex2f(-0.4f, -0.69f);    // x, y
+	glVertex2f(0.51f, 0.55f);    // x, y
+
+	glVertex2f(-0.4f, -0.75f);    // x, y
+	glVertex2f(0.7f, -0.08f);    // x, y
+    glEnd();
+
+    glFlush();  // Render now
+
+    glLineWidth(5.0);
+    glBegin(GL_LINES);///road middle write line
+    glColor3f(0.8f, 0.8f, 0.8f);
+    glVertex2f(0.510f, 0.52f);    // x, y
+    glVertex2f(-0.4, -0.73f);    // x, y
+
+    glVertex2f(-0.4f, -0.73f);    // x, y
+	glVertex2f(0.73f, -0.08f);    // x, y
+    glEnd();
+
+    glFlush();  // Render now
+    ///right road end
+
+    ///seat start
+    glLineWidth(11.0);
+    glBegin(GL_LINES);///blue line
+    glColor3f(0.0f, 0.0f, 0.5f);
+    glVertex2f(-0.33f, 0.65f);     /// blue line1
+	glVertex2f(-0.925f, -0.13f);   /// done
+
+	glVertex2f(-0.35f, 0.7f);      /// blue line2
+	glVertex2f(-0.895f, -0.02f);   /// done
+
+	glVertex2f(-0.4f, 0.7f);      /// blue line3
+	glVertex2f(-0.94f, -0.01f);   /// done
+
+	glVertex2f(-0.46f, 0.7f);     /// blue line4
+	glVertex2f(-0.966f, 0.03f);   /// done
+
+	glVertex2f(-0.45f, 0.78f);   /// blue line5
+	glVertex2f(-0.974f, 0.1f);   /// done
+
+	glVertex2f(-0.44f, 0.86f);   /// blue line6
+	glVertex2f(-0.93f, 0.23f);   /// done
+    glEnd();
+
+    glFlush();  // Render now
+
+    glLineWidth(18.0);
+    glBegin(GL_LINES);///blue line
+    glColor3f(0.0f, 0.6f, 0.9f);
+    glVertex2f(-0.343f, 0.67f);    /// sky line1
+	glVertex2f(-0.93f, -0.1f);   /// done
+
+	glVertex2f(-0.39f, 0.68f);    /// sky line2
+	glVertex2f(-0.905f, -0.0f);   /// done
+
+	glVertex2f(-0.43f, 0.7f);    /// sky line3
+	glVertex2f(-0.96f, -0.0f);   /// done
+
+	glVertex2f(-0.45f, 0.75f);    /// sky line4
+	glVertex2f(-0.942f, 0.1f);   /// done
+
+	glVertex2f(-0.463f, 0.8f);    /// sky line5
+	glVertex2f(-0.923f, 0.2f);   /// done
+    glEnd();
+
+    glFlush();  // Render now
+
+    glLineWidth(35.0);
+    glBegin(GL_LINES);///blue line
+    glColor3f(0.0f, 0.6f, 0.9f);
+    glVertex2f(-0.524f, 0.8f);    /// sky line1
+	glVertex2f(-0.92f, 0.3f);   /// done
+	glEnd();
+
+	glBegin(GL_LINES);///secret
+	glColor3f(0.6f, 0.6f, 0.3f);
+
+	glVertex2f(-0.97f, 0.36f);    /// line1
+	glVertex2f(-0.97f, -0.1f);   /// done
+
+    glVertex2f(-0.6f, 0.8f);    /// line2
+	glVertex2f(-0.97f, 0.3f);   /// done
+
+	glVertex2f(-0.67f, 0.8f);    /// line3
+	glVertex2f(-0.98f, 0.3f);   /// done
+
+	glVertex2f(-0.58f, 0.8f);   /// line4
+	glVertex2f(-0.33f, 0.7f);   /// done
+
+	glVertex2f(-0.58f, 0.87f);   /// line5
+	glVertex2f(-0.33f, 0.77f);   /// done
+
+	glVertex2f(-0.58f, 0.89f);   /// line6
+	glVertex2f(-0.33f, 0.79f);   /// done
+
+	glVertex2f(-0.87f, -0.04f);    /// line7
+	glVertex2f(-0.99f, -0.04f);   /// done
+
+	glVertex2f(-0.84f, -0.0f);    /// line8
+	glVertex2f(-0.93f, -0.11f);   /// done
+
+	glEnd();
+
+
+    ///seat wall
+
+	glBegin(GL_LINES);///seat wall
+	glColor3f(0.0f, 0.2f, 0.9f);
+
+	glVertex2f(-0.93f, 0.36f);    /// line1
+	glVertex2f(-0.91f, 0.05f);   /// done
+
+	glVertex2f(-0.93f, 0.35f);    /// line2
+	glVertex2f(-0.95f, 0.03f);   /// done
+
+	glVertex2f(-0.86f, 0.03f);    /// line4
+	glVertex2f(-0.967f, 0.02f);   /// done
+
+	glVertex2f(-0.93f, 0.36f);    /// line5
+	glVertex2f(-0.89f, 0.05f);   /// done
+
+	glEnd();
+
+    glFlush();  // Render now
+
+    ///white for seat side wall
+    glLineWidth(500.0);
+    glBegin(GL_LINES);///blue line
+    glColor3f(1.0f, 1.0f, 1.0f);
+    glVertex2f(-0.92f, 0.36f);    /// line1 left
+	glVertex2f(-0.84f, -0.01f);   /// done
+
+	glVertex2f(-0.58f, 0.79f);   /// line1 right
+	glVertex2f(-0.33f, 0.67f);   /// done
+    glEnd();
+
+    glFlush();  // Render now
+
+    ///round of dim
+    int i;
+
+	GLfloat x=.6f; GLfloat y=0.5f; GLfloat radius =.5f;
+	int triangleAmount = 20;
+	GLfloat twicePi = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+	glColor3f(0.9f, 0.9f, 0.9f);
+    glVertex2f(x,y);
+    for(i = 0; i <= triangleAmount;i++) {
+    glVertex2f
+			(
+                x + (radius * cos(i * twicePi / triangleAmount)),
+			    y + (radius * sin(i * twicePi / triangleAmount))
+			);
+		}
+	glEnd();
+
+
+	glLineWidth(20.0);
+	glBegin(GL_LINES);///dim line
+	glColor3f(0.2f, 0.5f, 1.0f);
+
+    glVertex2f(0.23f, 0.8f);    /// line1
+	glVertex2f(0.99f, 0.8f);   /// done
+
+    glVertex2f(0.172f, 0.7f);    /// line2
+	glVertex2f(0.999f, 0.7f);   /// done
+
+    glVertex2f(0.132f, 0.6f);    /// line3
+	glVertex2f(0.999f, 0.6f);   /// done
+
+	glVertex2f(0.1f, 0.5f);    /// line4
+	glVertex2f(0.999f, 0.5f);   /// done
+
+	glVertex2f(0.12f, 0.4f);    /// line5
+	glVertex2f(0.999f, 0.4f);   /// done
+
+	glVertex2f(0.16f, 0.3f);    /// line6
+	glVertex2f(0.999f, 0.3f);   /// done
+
+	glVertex2f(0.193f, 0.2f);    /// line6
+	glVertex2f(0.98f, 0.2f);   /// done
+
+	glVertex2f(0.34f, 0.1f);    /// line7
+	glVertex2f(0.88f, 0.1f);   /// done
+    glEnd();
+
+	///dim base
+	glBegin(GL_LINES);
+	glColor3f(0.9f, 0.9f, 0.9f);
+
+    glVertex2f(0.46f, 0.0f);    /// line1
+	glVertex2f(0.77f, 0.0f);   /// done
+
+	glVertex2f(0.46f, -0.04f);    /// line2
+	glVertex2f(0.77f, -0.04f);   /// done
+
+	glVertex2f(0.46f, -0.09f);    /// line3
+	glVertex2f(0.77f, -0.09f);   /// done
+	glEnd();
+
+	///dim door
+	glLineWidth(600.0);
+	glBegin(GL_LINES);
+	glColor3f(0.4f, 0.4f, 0.4f);
+	glVertex2f(0.65f, 0.03f);    /// line4
+	glVertex2f(0.65f, -0.12f);   /// done
+
+	glVertex2f(0.62f, 0.03f);    /// line5
+	glVertex2f(0.62f, -0.12f);   /// done
+
+	glVertex2f(0.59f, 0.03f);    /// line6
+	glVertex2f(0.59f, -0.12f);   /// done
+	glEnd();
+
+	glFlush();  // Render now
+
+	///seat head
+	glLineWidth(6.0);
+	glBegin(GL_LINES);
+	glColor3f(0.9f, 0.9f, 0.9f);
+
+    glVertex2f(-0.5f, 0.705f);    /// line1
+	glVertex2f(-0.5f, 0.9f);   /// done
+
+	//glVertex2f(-0.4f, 0.66f);    /// line2
+	//glVertex2f(-0.4f, 0.87f);   /// done
+
+	//glVertex2f(-0.83f, 0.3f);    /// line3
+	//glVertex2f(-0.83f, 0.08f);   /// done
+
+	glVertex2f(-0.86f, 0.2f);    /// line4
+	glVertex2f(-0.86f, 0.5f);   /// done
+
+	glEnd();
+
+	///seat head
+	glLineWidth(500.0);
+	glBegin(GL_LINES);
+	glColor3f(0.5f, 0.5f, 0.5f);
+
+    glVertex2f(-0.91f, 0.5f);    /// line1
+	glVertex2f(-0.5f, 0.99f);   /// done
+	glEnd();
+
+	glBegin(GL_LINES);
+	glColor3f(0.6f, 0.6f, 0.6f);
+
+	glVertex2f(-0.9f, 0.43f);    /// line2
+	glVertex2f(-0.5f, 0.95f);   /// done
+
+	glEnd();
+
+	glBegin(GL_LINES);
+	glColor3f(0.7f, 0.7f, 0.7f);
+
+	glVertex2f(-0.88f, 0.43f);    /// line3
+	glVertex2f(-0.48f, 0.95f);   /// done
+
+	glEnd();
+
+
+	glFlush();  // Render now
+
+
+}
+
+/* Main function: GLUT runs as a console application starting at main()  */
+int main(int argc, char** argv) {
+	glutInit(&argc, argv);                 // Initialize GLUT
+	glutCreateWindow("OpenGL Setup Test"); // Create a window with the given title
+	glutInitWindowSize(320, 320);   // Set the window's initial width & height
+	glutReshapeWindow(900,600);
+	glutDisplayFunc(display); // Register display callback handler for window re-paint
+	glutMainLoop();           // Enter the event-processing loop
+	return 0;
+}
+
